@@ -87,6 +87,10 @@ public class Detective {
 		int num = Integer.parseInt(numStr);
 
 		//ここに記述する
+		//条件によって文字列を切り替えて表示する処理。
+		String answer = (num == 1) ? "不正解です。" : "正解です。";
+		System.out.println("\n探偵：");
+		System.out.println(answer);
 
 	}
 

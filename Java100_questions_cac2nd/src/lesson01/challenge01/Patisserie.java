@@ -16,4 +16,11 @@ package lesson01.challenge01;
 
 public class Patisserie {
 
+	public static void main(String[] args) {
+		//コンソールに文字を1行表示する。改行ある。
+		System.out.println("たいへんお待たせしました。");
+		System.out.println("【ポエール・ネルメ】");
+		System.out.println("ただいまより開店です！！");
+	}
+
 }
