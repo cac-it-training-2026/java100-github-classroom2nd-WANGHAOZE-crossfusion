@@ -58,17 +58,22 @@ class Alphalian {
 
 	public Alphalian() {
 		String[] names = { "A", "B", "C", "D", "E" };
+		//0〜4のランダムな整数を作る
 		int nameNum = (int) (Math.random() * 10) % 5;
+		//配列から値を取り出して、自分のフィールドに代入する
 		this.name = names[nameNum];
 	}
 
-	public String getname() {
+	//フィールド name の値を外から取得するためのメソッド（getter）
+	public String getName() {
 		return name;
 	}
 
+	//フィールド name に値をセットするためのメソッド（setter）
 	public void setName(String name) {
 		this.name = name;
 	}
+
 }
 
 public class Astronaut {
@@ -76,7 +81,6 @@ public class Astronaut {
 	public static void main(String[] args) throws IOException {
 
 		boolean hitFlag = false;
-
 		for (int i = 0; i < 10; i++) {
 			System.out.print("名前を入れてください（A～E）＞");
 			BufferedReader br = new BufferedReader(new InputStreamReader(
@@ -85,7 +89,7 @@ public class Astronaut {
 
 			System.out.println("\nα星人：" + (i + 1) + "人目");
 			Alphalian alphalian = new Alphalian();
-			String name = alphalian.getname();
+			String name = alphalian.getName();
 			if (name.equals(estimatedName)) {
 				hitFlag = true;
 				break;
@@ -93,7 +97,6 @@ public class Astronaut {
 				System.out.println("おら、そんな名前じゃないアルファ！");
 				System.out.println(name + "が正解だアルファ！\n");
 			}
-
 		}
 
 		if (hitFlag) {
