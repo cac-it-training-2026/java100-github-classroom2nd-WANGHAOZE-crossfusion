@@ -25,23 +25,35 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 class Spaceship {
-    private int air;
+	//フィールド
+	private int air;
 
-    //ここに適切な処理を記述する。
+	public int getAir() {
+		return air;
+	}
+
+	public void setAir(int air) {
+		//自分のフィールドのair、引数と区別するためにthisを使う
+		this.air = air;
+	}
 }
 
 public class Astronaut {
 
-    public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 
-        System.out.print("空気を入れてください＞");
+		System.out.print("空気を入れてください＞");
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String airStr = br.readLine();
-        int air = Integer.parseInt(airStr);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String airStr = br.readLine();
+		int air = Integer.parseInt(airStr);
 
-        //ここに適切な処理を記述する。
+		//インスタンスを作成
+		Spaceship spaceship = new Spaceship();
+		spaceship.setAir(air);
 
-    }
+		System.out.println("\n" + spaceship.getAir() + "リットルの空気が入りました。");
+
+	}
 
 }

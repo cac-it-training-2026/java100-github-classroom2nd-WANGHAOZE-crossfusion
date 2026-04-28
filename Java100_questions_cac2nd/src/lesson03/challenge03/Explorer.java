@@ -43,12 +43,15 @@ public class Explorer {
 		int apsedTime = 0;
 
 		//ここにwhile文を記述する。
+		//nauticalMile が 0 より大きい間、{} の中の処理を繰り返す。
+		while (0 < nauticalMile) {
 
 			nauticalMile -= 22;
 			System.out.println("隊長：");
 			System.out.println((apsedTime += 1) + "時間たったよ\n");
 
-		//ここに  } を記述する。
+			//ここに  } を記述する。
+		}
 
 		System.out.println("到着！");
 

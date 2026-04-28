@@ -53,24 +53,58 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-//ここにAlphalianクラスを記述する
+class Alphalian {
+	private String name;
+
+	public Alphalian() {
+		String[] names = { "A", "B", "C", "D", "E" };
+		//0〜4のランダムな整数を作る
+		int nameNum = (int) (Math.random() * 10) % 5;
+		//配列から値を取り出して、自分のフィールドに代入する
+		this.name = names[nameNum];
+	}
+
+	//フィールド name の値を外から取得するためのメソッド（getter）
+	public String getName() {
+		return name;
+	}
+
+	//フィールド name に値をセットするためのメソッド（setter）
+	public void setName(String name) {
+		this.name = name;
+	}
+
+}
 
 public class Astronaut {
 
-    public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException {
 
-        boolean hitFlag = false;
+		boolean hitFlag = false;
+		for (int i = 0; i < 10; i++) {
+			System.out.print("名前を入れてください（A～E）＞");
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					System.in));
+			String estimatedName = br.readLine();
 
+			System.out.println("\nα星人：" + (i + 1) + "人目");
+			Alphalian alphalian = new Alphalian();
+			String name = alphalian.getName();
+			if (name.equals(estimatedName)) {
+				hitFlag = true;
+				break;
+			} else {
+				System.out.println("おら、そんな名前じゃないアルファ！");
+				System.out.println(name + "が正解だアルファ！\n");
+			}
+		}
 
-        //ここに適切な処理を記述する。
-
-
-        if (hitFlag) {
-            System.out.println("当たったアルファ。α星にようこそアルファ。");
-        } else {
-            System.out.println("って言うか、お前やる気ないアルファ！");
-            System.out.println("とっとと出て行けアルファ！");
-        }
-    }
+		if (hitFlag) {
+			System.out.println("当たったアルファ。α星にようこそアルファ。");
+		} else {
+			System.out.println("って言うか、お前やる気ないアルファ！");
+			System.out.println("とっとと出て行けアルファ！");
+		}
+	}
 
 }
